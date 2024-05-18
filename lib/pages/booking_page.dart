@@ -1,16 +1,16 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_element, unused_local_variable
-import 'package:flutter/material.dart';
-import 'package:travel_application/widgets/featured_listed.dart';
-import 'package:travel_application/widgets/recommended_places.dart';
-// ignore: depend_on_referenced_packages
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:travel_application/widgets/bookmarked.dart';
+import 'package:travel_application/widgets/history.dart';
+import 'package:travel_application/widgets/on_going.dart';
+
+class BookingPage extends StatelessWidget {
+  const BookingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: no_leading_underscores_for_local_identifiers
-    int _selectedIndex = 0;
     return Scaffold(
       backgroundColor: Color.fromRGBO(224, 224, 224, 1.0),
       body: ListView(
@@ -20,18 +20,9 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Recommendation",
+                "On Going",
                 style: TextStyle(
                   fontSize: 20,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "View All",
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                  ),
                 ),
               ),
             ],
@@ -39,12 +30,12 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          RecommendedPlaces(),
+          OnGoing(),
           SizedBox(
             height: 10,
           ),
           Text(
-            "Featured Listed",
+            "History",
             style: TextStyle(
               fontSize: 20,
             ),
@@ -52,7 +43,20 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          FeaturedListed(),
+          History(),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            "Book Marked",
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          BookMarked(),
         ],
       ),
     );

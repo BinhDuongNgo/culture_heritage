@@ -2,44 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:another_stepper/another_stepper.dart';
 
 class StepDelivery extends StatefulWidget {
+  const StepDelivery({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _StepDelivery createState() => _StepDelivery();
 }
-
-// class _StepDelivery extends State<StepDelivery> {
-//   List<TextDto> orderList = [
-//     TextDto("Your order has been placed", "Fri, 25th Mar '22 - 10:47pm"),
-//     TextDto("Seller ha processed your order", "Sun, 27th Mar '22 - 10:19am"),
-//     TextDto("Your item has been picked up by courier partner.",
-//         "Tue, 29th Mar '22 - 5:00pm"),
-//   ];
-
-//   List<TextDto> shippedList = [
-//     TextDto("Your order has been shipped", "Tue, 29th Mar '22 - 5:04pm"),
-//     TextDto("Your item has been received in the nearest hub to you.", null),
-//   ];
-
-//   List<TextDto> outOfDeliveryList = [
-//     TextDto("Your order is out for delivery", "Thu, 31th Mar '22 - 2:27pm"),
-//   ];
-
-//   List<TextDto> deliveredList = [
-//     TextDto("Your order has been delivered", "Thu, 31th Mar '22 - 3:58pm"),
-//   ];
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return OrderTracker(
-//       status: Status.delivered,
-//       activeColor: Colors.green,
-//       inActiveColor: Colors.grey[300],
-//       orderTitleAndDateList: orderList,
-//       shippedTitleAndDateList: shippedList,
-//       outOfDeliveryTitleAndDateList: outOfDeliveryList,
-//       deliveredTitleAndDateList: deliveredList,
-//     );
-//   }
-// }
 
 class _StepDelivery extends State<StepDelivery> {
   List<StepperData> stepperData = [
@@ -109,7 +77,7 @@ class _StepDelivery extends State<StepDelivery> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 20, right: 20,
           ),
           child: AnotherStepper(

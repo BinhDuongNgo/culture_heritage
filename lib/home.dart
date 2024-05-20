@@ -20,7 +20,7 @@ class _Home extends State<Home> {
     HomePage(),
     BookingPage(),
     SearchPage(),
-    ProfilePage(),
+    ProfilePages(),
   ];
   @override
   Widget build(BuildContext context) {

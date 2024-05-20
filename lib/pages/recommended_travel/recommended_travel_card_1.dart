@@ -23,7 +23,6 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
           color: Colors.white,
         ),
       ),
-      // ignore: prefer_const_constructors
       body: Container(
         alignment: Alignment.center,
         decoration: const BoxDecoration(
@@ -104,7 +103,6 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
             ),
             Container(
               width: 70,
-              // ignore: prefer_const_constructors
               child: Column(
                 children: [
                   Expanded(

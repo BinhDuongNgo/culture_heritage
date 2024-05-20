@@ -139,7 +139,7 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
                           children: [
                             Icon(
                               Icons.share,
-                              color: Colors.white,
+                              color: Colors.black,
                               size: 40,
                             ),
                             Center(
@@ -157,7 +157,7 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
                           children: [
                             Icon(
                               Icons.favorite,
-                              color: Colors.white,
+                              color: Colors.red,
                               size: 40,
                             ),
                             Center(

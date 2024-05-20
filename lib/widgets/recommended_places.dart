@@ -10,7 +10,7 @@ import 'package:travel_application/pages/recommended_travel/recommended_travel_c
 
 
 class RecommendedPlaces extends StatelessWidget {
-  const RecommendedPlaces({Key? key}) : super(key: key);
+  const RecommendedPlaces({super.key});
 
   @override
   Widget build(BuildContext context) {

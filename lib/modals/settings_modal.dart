@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class settingModal {
   final IconData icon;
   final String name;
@@ -25,11 +26,6 @@ List<settingModal> settings = [
   settingModal(
     icon: Icons.help,
     name: "Help center",
-    route: "/",
-  ),
-  settingModal(
-    icon: Icons.logout,
-    name: "Logout",
     route: "/",
   ),
 ];

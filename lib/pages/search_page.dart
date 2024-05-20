@@ -7,7 +7,6 @@ import 'package:travel_application/pages/recommended_travel/recommended_travel_c
 import 'package:travel_application/pages/recommended_travel/recommended_travel_card_3.dart';
 import 'package:travel_application/pages/recommended_travel/recommended_travel_card_4.dart';
 import 'package:travel_application/pages/recommended_travel/recommended_travel_card_5.dart';
-import 'package:travel_application/widgets/bookmarked.dart';
 // ignore: depend_on_referenced_packages
 
 // class SearchPage extends StatelessWidget{

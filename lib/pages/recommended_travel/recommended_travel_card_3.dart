@@ -23,7 +23,6 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
           color: Colors.white,
         ),
       ),
-      // ignore: prefer_const_constructors
       body: Container(
         alignment: Alignment.center,
         decoration: const BoxDecoration(
@@ -104,7 +103,6 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
             ),
             Container(
               width: 70,
-              // ignore: prefer_const_constructors
               child: Column(
                 children: [
                   Expanded(
@@ -139,7 +137,7 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
                           children: [
                             Icon(
                               Icons.share,
-                              color: Colors.white,
+                              color: Colors.black,
                               size: 40,
                             ),
                             Center(
@@ -157,7 +155,7 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
                           children: [
                             Icon(
                               Icons.favorite,
-                              color: Colors.white,
+                              color: Colors.red,
                               size: 40,
                             ),
                             Center(

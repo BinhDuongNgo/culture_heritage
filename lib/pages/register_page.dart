@@ -2,11 +2,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:travel_application/home.dart';
-import 'package:travel_application/pages/register_page.dart';
+import 'package:travel_application/pages/login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,13 +90,47 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 25, bottom: 5, top: 10),
+            child: Container(
+              width: double.infinity,
+              height: 20,
+              child: Text(
+                "Confirm password",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: TextField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade400),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                hintText: "confirm password",
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+          ),
           SizedBox(
-            height: 40,
+            height: 50,
           ),
           InkWell(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
             },
             child: Container(
               padding: EdgeInsets.all(20),
@@ -108,7 +141,7 @@ class LoginPage extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "Sign in",
+                  "Sign up",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -118,75 +151,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 15,
-          ),
-          Center(
-            child: Text("Or"),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: EdgeInsets.all(20),
-                margin: EdgeInsets.symmetric(horizontal: 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.g_mobiledata,
-                      color: Colors.orange,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Center(
-                      child: Text(
-                        "Google",
-                        style: TextStyle(
-                          color: Colors.grey.shade800,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(20),
-                margin: EdgeInsets.symmetric(horizontal: 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.facebook,
-                      color: Colors.blue,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Center(
-                      child: Text(
-                        "Facebook",
-                        style: TextStyle(
-                          color: Colors.grey.shade800,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
+            height: 30,
           ),
           SizedBox(
             width: double.maxFinite,
@@ -197,18 +162,18 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account? ",
+                      "Already have an account? ",
                     ),
                     InkWell(
                       child: Text(
-                        "Sign up",
+                        "Sign in",
                         style: TextStyle(color: Colors.blue),
                       ),
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterPage()));
+                                builder: (context) => LoginPage()));
                       },
                     ),
                   ],
@@ -216,22 +181,6 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 100,
-          ),
-          Center(
-              child: InkWell(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
-            },
-            child: Text(
-              "Explore the app as a guest",
-              style: TextStyle(
-                color: Colors.grey.shade600,
-              ),
-            ),
-          )),
         ],
       ),
     );

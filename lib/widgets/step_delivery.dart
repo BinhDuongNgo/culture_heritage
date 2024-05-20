@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:order_tracker/order_tracker.dart';
 import 'package:another_stepper/another_stepper.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:lottie/lottie.dart';
 
 class StepDelivery extends StatefulWidget {
   @override

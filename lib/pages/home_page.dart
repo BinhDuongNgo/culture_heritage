@@ -25,15 +25,6 @@ class HomePage extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "View All",
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                  ),
-                ),
-              ),
             ],
           ),
           SizedBox(

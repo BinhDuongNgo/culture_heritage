@@ -41,7 +41,6 @@ class _BookingCard2 extends State<BookingCard2> {
         leadingWidth: 150,
         toolbarHeight: 100,
       ),
-      // ignore: prefer_const_constructors
       body: ListView(
         padding: EdgeInsets.all(14),
         children: [

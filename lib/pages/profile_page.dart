@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class ProfilePages extends StatelessWidget {
+  const ProfilePages({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -20,7 +20,7 @@ class BookingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "On Going",
+                "Booker Tour",
                 style: TextStyle(
                   fontSize: 20,
                 ),

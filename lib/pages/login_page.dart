@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:travel_application/home.dart';
+import 'package:travel_application/pages/register_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -23,11 +24,15 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 370, top: 5, bottom: 5),
-            child: Text(
-              "Email",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.only(left: 25, bottom: 5, top: 10),
+            child: Container(
+              width: double.infinity,
+              height: 20,
+              child: Text(
+                "Email",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -53,11 +58,15 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 340, top: 5, bottom: 5),
-            child: Text(
-              "Password",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.only(left: 25, bottom: 5, top: 10),
+            child: Container(
+              width: double.infinity,
+              height: 20,
+              child: Text(
+                "Password",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -83,21 +92,21 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 40,
           ),
-          Container(
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.symmetric(horizontal: 25),
-            decoration: BoxDecoration(
-              color: Colors.orange.shade300,
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: Center(
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
-                },
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Home()));
+            },
+            child: Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.symmetric(horizontal: 25),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade300,
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Center(
                 child: Text(
                   "Sign in",
                   style: TextStyle(
@@ -177,7 +186,38 @@ class LoginPage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 150,
+            height: 10,
+          ),
+          SizedBox(
+            width: double.maxFinite,
+            height: 50,
+            child: Container(
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account? ",
+                    ),
+                    InkWell(
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterPage()));
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 100,
           ),
           Center(
               child: InkWell(

@@ -10,7 +10,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: no_leading_underscores_for_local_identifiers
-    int _selectedIndex = 0;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromRGBO(224, 224, 224, 1.0),
       body: ListView(
@@ -28,11 +29,11 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: screenHeight*0.01,
           ),
           RecommendedPlaces(),
           SizedBox(
-            height: 10,
+            height: screenHeight*0.01,
           ),
           Text(
             "Featured Listed",
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: screenHeight*0.01,
           ),
           FeaturedListed(),
         ],

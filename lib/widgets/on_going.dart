@@ -9,9 +9,10 @@ class OnGoing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: 850,
-      width: 600,
+      height: screenHeight*1,
       child: Card(
         elevation: 0.5,
         shape: RoundedRectangleBorder(
@@ -33,19 +34,18 @@ class OnGoing extends StatelessWidget {
                     'assets/images/vanmieu.jpg',
                     width: double.maxFinite,
                     fit: BoxFit.cover,
-                    height: 200,
+                    height: screenHeight*0.25,
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: screenHeight*0.01,
                 ),
                 Row(
                   children: [
                     Column(
                       children: [
                         SizedBox(
-                          width: 100,
-                          height: 40,
+                          height: screenHeight*0.05,
                           child: Center(
                             child: Text(
                               "Schedule",
@@ -58,15 +58,11 @@ class OnGoing extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(12),
-                    ),
                   ],
                 ),
                 StepDelivery(),
                 Container(
                   padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.symmetric(horizontal: 150, vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.green.shade100,
                     borderRadius: BorderRadius.circular(25),

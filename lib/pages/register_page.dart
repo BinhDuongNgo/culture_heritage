@@ -26,61 +26,70 @@ class RegisterPage extends StatelessWidget {
             height: screenHeight * 0.40,
             child: Column(
               children: [
-                SizedBox(
-                  height: screenHeight * 0.10,
-                  width: screenWidth * 0.85,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      label: Text("Email"),
-                      prefixIcon: Icon(Icons.person),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: SizedBox(
+                    height: screenHeight * 0.10,
+                    width: screenWidth * 0.85,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        label: Text("Email"),
+                        prefixIcon: Icon(Icons.person),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: screenHeight * 0.10,
-                  width: screenWidth * 0.85,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      label: Text("Password"),
-                      prefixIcon: Icon(Icons.lock_person),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: SizedBox(
+                    height: screenHeight * 0.10,
+                    width: screenWidth * 0.85,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        label: Text("Password"),
+                        prefixIcon: Icon(Icons.lock_person),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: screenHeight * 0.10,
-                  width: screenWidth * 0.85,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      label: Text("Confirm password"),
-                      prefixIcon: Icon(Icons.lock_person),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: SizedBox(
+                    height: screenHeight * 0.10,
+                    width: screenWidth * 0.85,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        label: Text("Confirm password"),
+                        prefixIcon: Icon(Icons.lock_person),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),

@@ -1,9 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:readmore/readmore.dart';
 
 class BookingCard2 extends StatefulWidget {
@@ -17,6 +13,8 @@ class _BookingCard2 extends State<BookingCard2> {
       "Lăng Chủ tịch Hồ Chí Minh là nơi lưu giữ di hài của Bác và là điểm đến mà mỗi thế hệ người Việt đều mong mỏi viếng thăm để bày tỏ tình cảm và lòng biết ơn sâu sắc dành cho vị cha già dân tộc. Lăng Chủ tịch Hồ Chí Minh hay Lăng Hồ Chủ tịch còn được gọi với tên thân thương là lăng Bác tọa lạc tại địa chỉ số 2 Hùng Vương, thuộc phường Điện Biên, quận Ba Đình, TP. Hà Nội. Công trình là nơi gìn giữ di hài của Bác theo nguyện vọng, tình cảm của Ban chấp hành trung ương Đảng và nhân dân. Lăng Bác được khởi công vào ngày 02/9/1973 và khánh thành vào ngày 29/8/1975. Công trình lăng Bác được xây dựng gồm 3 lớp, cao 21,6 mét và rộng 41,2 mét. Bên dưới là bậc thềm tam cấp dẫn lên kết cấu trung tâm với phòng di hài và những hành lang, cầu thang. Phần trên cùng là mái lăng được thiết kế theo hình tam cấp. Bên ngoài lăng được ốp đá granite xám, quanh bốn mặt là những hàng cột đá hoa cương vuông vức và ở giữa nổi bật dòng chữ “CHỦ TỊCH HỒ-CHÍ-MINH” bằng đá hồng có màu mận chín. Khu vực bên trong được làm bằng chất liệu đá xám và đỏ được đánh bóng. Khuôn viên quanh lăng trồng nhiều loài cây, hoa đặc trưng của các vùng miền trên cả nước. Đây là điểm tham quan nổi tiếng của Thủ đô, nơi bất kỳ người dân Việt Nam nào cũng muốn được đặt chân đến một lần.";
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -57,7 +55,7 @@ class _BookingCard2 extends State<BookingCard2> {
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
-                  height: 400,
+                  height: screenHeight * 0.5,
                 ),
               ),
               Padding(
@@ -71,17 +69,20 @@ class _BookingCard2 extends State<BookingCard2> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Lăng Chủ tịch Hồ Chí Minh",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 23,
-                          color: Colors.black,
+                      Container(
+                        width: screenWidth * 0.65,
+                        child: Text(
+                          "Lăng Chủ tịch Hồ Chí Minh",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 23,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                       Container(
-                        width: 60,
-                        height: 60,
+                        width: screenWidth * 0.08,
+                        height: screenHeight * 0.08,
                         child: Column(
                           children: [
                             Icon(
@@ -99,8 +100,8 @@ class _BookingCard2 extends State<BookingCard2> {
                         ),
                       ),
                       Container(
-                        width: 60,
-                        height: 60,
+                        width: screenWidth * 0.08,
+                        height: screenHeight * 0.08,
                         child: Column(
                           children: [
                             Icon(

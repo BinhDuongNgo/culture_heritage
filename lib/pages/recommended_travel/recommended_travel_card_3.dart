@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -74,16 +75,27 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
                           SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            padding: EdgeInsets.all(20),
-                            margin: EdgeInsets.symmetric(horizontal: 25),
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            child: Center(
-                              child: InkWell(
-                                onTap: () {},
+                          InkWell(
+                            onTap: () {
+                              AwesomeDialog(
+                                context: context,
+                                dialogType: DialogType.success,
+                                animType: AnimType.topSlide,
+                                title: "Success",
+                                desc: "Tour booking completed",
+                                btnOkOnPress: () {
+                                  Navigator.pop(context);
+                                },
+                              ).show();
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              margin: EdgeInsets.symmetric(horizontal: 25),
+                              decoration: BoxDecoration(
+                                color: Colors.orange.shade300,
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              child: Center(
                                 child: Text(
                                   "Booking now",
                                   style: TextStyle(

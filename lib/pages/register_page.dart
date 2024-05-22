@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_application/pages/login_page.dart';
 
@@ -105,8 +106,17 @@ class RegisterPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    AwesomeDialog(
+                      context: context,
+                      dialogType: DialogType.success,
+                      animType: AnimType.topSlide,
+                      title: "Success",
+                      desc: "Registered successfully, moving to the login screen",
+                      btnOkOnPress: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => LoginPage()));
+                      },
+                    ).show();
                   },
                   child: Container(
                     padding: EdgeInsets.all(20),

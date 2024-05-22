@@ -114,6 +114,24 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
                         Column(
                           children: [
                             Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                              size: 40,
+                            ),
+                            Center(
+                              child: Text(
+                                "3K",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Icon(
                               Icons.comment,
                               color: Colors.white,
                               size: 40,
@@ -133,25 +151,7 @@ class _RecommendTravelCard1 extends State<RecommendTravelCard1> {
                           children: [
                             Icon(
                               Icons.share,
-                              color: Colors.black,
-                              size: 40,
-                            ),
-                            Center(
-                              child: Text(
-                                "3K",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.red,
+                              color: Colors.white,
                               size: 40,
                             ),
                             Center(

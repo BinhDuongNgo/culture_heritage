@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_application/home.dart';
 import 'package:travel_application/pages/register_page.dart';
@@ -83,8 +84,17 @@ class LoginPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                    AwesomeDialog(
+                      context: context,
+                      dialogType: DialogType.success,
+                      animType: AnimType.topSlide,
+                      title: "Success",
+                      desc: "Successful login",
+                      btnOkOnPress: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Home()));
+                      },
+                    ).show();
                   },
                   child: Container(
                     padding: EdgeInsets.all(20),

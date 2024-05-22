@@ -1,4 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
@@ -158,21 +159,36 @@ class _CancelTheTour extends State<CancelTheTour> {
                   left: 100,
                   right: 100,
                 ),
-                child: Container(
-                  padding: EdgeInsets.all(15),
-                  margin: EdgeInsets.symmetric(horizontal: 25),
-                  decoration: BoxDecoration(
-                    color: Colors.red.shade300,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Center(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                        "Cancel the tour",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                child: InkWell(
+                  onTap: () {
+                    AwesomeDialog(
+                      context: context,
+                      dialogType: DialogType.warning,
+                      animType: AnimType.topSlide,
+                      title: "Warning",
+                      desc: "Are you sure you want to cancel the tour?",
+                      btnCancelOnPress: () {},
+                      btnOkOnPress: () {
+                        Navigator.pop(context);
+                      },
+                    ).show();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    margin: EdgeInsets.symmetric(horizontal: 25),
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade300,
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {},
+                        child: Text(
+                          "Cancel the tour",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

@@ -1,10 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:travel_application/pages/profile_page.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 // ignore: depend_on_referenced_packages
 
 class EditProfilePages extends StatelessWidget {
@@ -153,10 +149,16 @@ class EditProfilePages extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProfilePages()));
+                    AwesomeDialog(
+                      context: context,
+                      dialogType: DialogType.success,
+                      animType: AnimType.topSlide,
+                      title: "Success",
+                      desc: "You have successfully updated your information",
+                      btnOkOnPress: () {
+                        Navigator.pop(context);
+                      },
+                    ).show();
                   },
                   child: Container(
                     padding: EdgeInsets.all(15),

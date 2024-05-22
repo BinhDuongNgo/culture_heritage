@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:travel_application/pages/booking_card/booking_card_1.dart';
 import 'package:travel_application/widgets/cancel_the_tour.dart';
 import 'package:travel_application/widgets/step_delivery.dart';
 

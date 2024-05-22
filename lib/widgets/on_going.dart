@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:travel_application/pages/booking_card/booking_card_1.dart';
+import 'package:travel_application/widgets/cancel_the_tour.dart';
 import 'package:travel_application/widgets/step_delivery.dart';
 
 class OnGoing extends StatelessWidget {
@@ -20,7 +21,7 @@ class OnGoing extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => BookingCard1()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CancelTheTour()));
           },
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -63,19 +64,19 @@ class OnGoing extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.green.shade100,
+                    color: Colors.red.shade300,
                     borderRadius: BorderRadius.circular(25),
                     border: Border.all(color: Colors.black),
                   ),
                   child: Center(
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => BookingCard1()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CancelTheTour()));
                       },
                       child: Text(
-                        "Booking",
+                        "Cancel the tour",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

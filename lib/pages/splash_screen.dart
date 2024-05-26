@@ -47,6 +47,12 @@ class _SplashScreenState extends State<SplashScreen>
               width: 500,
               height: 500,
             ),
+            Center(
+              child: Text(
+                "Powered By Ngo Binh Duong",
+                style: TextStyle(color: Colors.black, fontSize: 18),
+              ),
+            ),
           ],
         ),
       ),

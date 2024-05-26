@@ -62,11 +62,11 @@ class ProfilePages extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "User",
+                  "Ngo Binh Duong",
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 Text(
-                  "user@gmail.com",
+                  "binhduong772@gmail.com",
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
                 SizedBox(

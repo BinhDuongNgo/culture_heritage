@@ -182,7 +182,19 @@ class _CancelTheTour extends State<CancelTheTour> {
                     ),
                     child: Center(
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.warning,
+                            animType: AnimType.topSlide,
+                            title: "Warning",
+                            desc: "Are you sure you want to cancel the tour?",
+                            btnCancelOnPress: () {},
+                            btnOkOnPress: () {
+                              Navigator.pop(context);
+                            },
+                          ).show();
+                        },
                         child: Text(
                           "Cancel the tour",
                           style: TextStyle(

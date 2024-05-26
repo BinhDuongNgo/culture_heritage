@@ -11,7 +11,7 @@ class OnGoing extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: screenHeight*1,
+      height: screenHeight * 1.05,
       child: Card(
         elevation: 0.5,
         shape: RoundedRectangleBorder(
@@ -20,7 +20,8 @@ class OnGoing extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => CancelTheTour()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => CancelTheTour()));
           },
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -33,18 +34,18 @@ class OnGoing extends StatelessWidget {
                     'assets/images/vanmieu.jpg',
                     width: double.maxFinite,
                     fit: BoxFit.cover,
-                    height: screenHeight*0.25,
+                    height: screenHeight * 0.25,
                   ),
                 ),
                 SizedBox(
-                  height: screenHeight*0.01,
+                  height: screenHeight * 0.01,
                 ),
                 Row(
                   children: [
                     Column(
                       children: [
                         SizedBox(
-                          height: screenHeight*0.05,
+                          height: screenHeight * 0.05,
                           child: Center(
                             child: Text(
                               "Schedule",
@@ -60,18 +61,21 @@ class OnGoing extends StatelessWidget {
                   ],
                 ),
                 StepDelivery(),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.red.shade300,
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: Colors.black),
-                  ),
-                  child: Center(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => CancelTheTour()));
-                      },
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CancelTheTour()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade300,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.black),
+                    ),
+                    child: Center(
                       child: Text(
                         "Cancel the tour",
                         style: TextStyle(

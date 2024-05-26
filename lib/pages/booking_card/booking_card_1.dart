@@ -181,7 +181,18 @@ class _BookingCard1 extends State<BookingCard1> {
                     ),
                     child: Center(
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.success,
+                            animType: AnimType.topSlide,
+                            title: "Success",
+                            desc: "Tour booking completed",
+                            btnOkOnPress: () {
+                              Navigator.pop(context);
+                            },
+                          ).show();
+                        },
                         child: Text(
                           "Booking now",
                           style: TextStyle(

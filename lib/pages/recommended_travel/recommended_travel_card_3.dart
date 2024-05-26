@@ -95,12 +95,26 @@ class _RecommendTravelCard3 extends State<RecommendTravelCard3> {
                                 color: Colors.orange.shade300,
                                 borderRadius: BorderRadius.circular(25),
                               ),
-                              child: Center(
-                                child: Text(
-                                  "Booking now",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                              child: InkWell(
+                                onTap: () {
+                                  AwesomeDialog(
+                                    context: context,
+                                    dialogType: DialogType.success,
+                                    animType: AnimType.topSlide,
+                                    title: "Success",
+                                    desc: "Tour booking completed",
+                                    btnOkOnPress: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ).show();
+                                },
+                                child: Center(
+                                  child: Text(
+                                    "Booking now",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),

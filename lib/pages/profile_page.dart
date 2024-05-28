@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_application/pages/edit_profile_page.dart';
 import 'package:travel_application/pages/login_page.dart';
@@ -275,6 +276,7 @@ class ProfilePages extends StatelessWidget {
                       desc: "Do you want to log out?",
                       btnCancelOnPress: () {},
                       btnOkOnPress: () {
+                        FirebaseAuth.instance.signOut();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

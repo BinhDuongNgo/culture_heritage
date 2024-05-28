@@ -1,23 +1,40 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_application/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:travel_application/home.dart';
 import 'package:travel_application/pages/register_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(224, 224, 224, 1.0),
+      backgroundColor: const Color.fromRGBO(224, 224, 224, 1.0),
       body: Column(
         children: [
           SizedBox(
             width: double.maxFinite,
             height: screenHeight * 0.25,
-            child: Center(
+            child: const Center(
               child: Image(
                 image: AssetImage('assets/images/logo.png'),
               ),
@@ -34,15 +51,16 @@ class LoginPage extends StatelessWidget {
                     height: screenHeight * 0.10,
                     width: screenWidth * 0.85,
                     child: TextFormField(
+                      controller: _emailController,
                       decoration: InputDecoration(
-                        label: Text("Email"),
-                        prefixIcon: Icon(Icons.person),
+                        label: const Text("Email"),
+                        prefixIcon: const Icon(Icons.person),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             width: 2,
                             color: Colors.black,
                           ),
@@ -57,15 +75,16 @@ class LoginPage extends StatelessWidget {
                     height: screenHeight * 0.10,
                     width: screenWidth * 0.85,
                     child: TextFormField(
+                      controller: _passwordController,
                       decoration: InputDecoration(
-                        label: Text("Password"),
-                        prefixIcon: Icon(Icons.lock_person),
+                        label: const Text("Password"),
+                        prefixIcon: const Icon(Icons.lock_person),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             width: 2,
                             color: Colors.black,
                           ),
@@ -83,27 +102,15 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 InkWell(
-                  onTap: () {
-                    AwesomeDialog(
-                      context: context,
-                      dialogType: DialogType.success,
-                      animType: AnimType.topSlide,
-                      title: "Success",
-                      desc: "Successful login",
-                      btnOkOnPress: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
-                      },
-                    ).show();
-                  },
+                  onTap: _signIn,
                   child: Container(
-                    padding: EdgeInsets.all(20),
-                    margin: EdgeInsets.symmetric(horizontal: 25),
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
                     decoration: BoxDecoration(
                       color: Colors.orange.shade300,
                       borderRadius: BorderRadius.circular(25),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Sign in",
                         style: TextStyle(
@@ -117,7 +124,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.015,
                 ),
-                Center(
+                const Center(
                   child: Text("Or"),
                 ),
                 SizedBox(
@@ -127,15 +134,15 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(20),
-                      margin: EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.all(20),
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.g_mobiledata,
                             color: Colors.orange,
                           ),
@@ -154,15 +161,15 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(20),
-                      margin: EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.all(20),
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.facebook,
                             color: Colors.blue,
                           ),
@@ -188,57 +195,65 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   width: double.maxFinite,
                   height: screenHeight * 0.05,
-                  child: Container(
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don't have an account? ",
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't have an account? ",
+                        ),
+                        InkWell(
+                          child: const Text(
+                            "Sign up",
+                            style: TextStyle(color: Colors.blue),
                           ),
-                          InkWell(
-                            child: Text(
-                              "Sign up",
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => RegisterPage()));
-                            },
-                          ),
-                        ],
-                      ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const RegisterPage()));
+                          },
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
-            width: double.maxFinite,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Center(
-                    child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home()));
-                  },
-                  child: Text(
-                    "Explore the app as a guest",
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
-                )),
-              ],
-            ),
-          ),
         ],
       ),
     );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    if (user != null) {
+      AwesomeDialog(
+        // ignore: use_build_context_synchronously
+        context: context,
+        dialogType: DialogType.success,
+        animType: AnimType.topSlide,
+        title: "Success",
+        desc: "Successful login",
+        btnOkOnPress: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Home()));
+        },
+      ).show();
+    } else {
+      AwesomeDialog(
+        // ignore: use_build_context_synchronously
+        context: context,
+        dialogType: DialogType.error,
+        animType: AnimType.topSlide,
+        title: "Error",
+        desc: "Incorrect email or password",
+        btnOkOnPress: () {},
+      ).show();
+    }
   }
 }

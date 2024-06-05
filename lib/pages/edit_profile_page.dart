@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:travel_application/widgets/textform_edit_profile.dart';
 // ignore: depend_on_referenced_packages
 
 class EditProfilePages extends StatelessWidget {
@@ -8,6 +9,14 @@ class EditProfilePages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String name = "Name";
+    String email = "Email";
+    String phone = "Phone number";
+    String password = "Password";
+    IconData nameIcon = Icons.person;
+    IconData emailIcon = Icons.email;
+    IconData phoneIcon = Icons.phone;
+    IconData passwordIcon = Icons.lock;
     return Scaffold(
       backgroundColor: Color.fromRGBO(224, 224, 224, 1.0),
       appBar: AppBar(
@@ -65,82 +74,10 @@ class EditProfilePages extends StatelessWidget {
                 Form(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            label: Text("Full name"),
-                            prefixIcon: Icon(Icons.person),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              borderSide: BorderSide(
-                                width: 2,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            label: Text("Email"),
-                            prefixIcon: Icon(Icons.email),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              borderSide: BorderSide(
-                                width: 2,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            label: Text("Phone number"),
-                            prefixIcon: Icon(Icons.phone),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              borderSide: BorderSide(
-                                width: 2,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            label: Text("Password"),
-                            prefixIcon: Icon(Icons.lock),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              borderSide: BorderSide(
-                                width: 2,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      TextFormEditProfile(name, nameIcon),
+                      TextFormEditProfile(email, emailIcon),
+                      TextFormEditProfile(phone, phoneIcon),
+                      TextFormEditProfile(password, passwordIcon),
                     ],
                   ),
                 ),

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:travel_application/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:travel_application/home.dart';
 import 'package:travel_application/pages/register_page.dart';
+import 'package:travel_application/widgets/google_facebook.dart';
+import 'package:travel_application/widgets/textform_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,202 +29,107 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: const Color.fromRGBO(224, 224, 224, 1.0),
-      body: Column(
-        children: [
-          SizedBox(
-            width: double.maxFinite,
-            height: screenHeight * 0.25,
-            child: const Center(
-              child: Image(
-                image: AssetImage('assets/images/logo.png'),
+    String email = "Email";
+    IconData emailIcon = Icons.email;
+    String password = "Password";
+    IconData passwordIcon = Icons.lock_person;
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: const Color.fromRGBO(224, 224, 224, 1.0),
+        body: Column(
+          children: [
+            SizedBox(
+              width: double.maxFinite,
+              height: screenHeight * 0.25,
+              child: const Center(
+                child: Image(
+                  image: AssetImage('assets/images/logo.png'),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            width: double.maxFinite,
-            height: screenHeight * 0.3,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: SizedBox(
-                    height: screenHeight * 0.10,
-                    width: screenWidth * 0.85,
-                    child: TextFormField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        label: const Text("Email"),
-                        prefixIcon: const Icon(Icons.person),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: const BorderSide(
-                            width: 2,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: SizedBox(
-                    height: screenHeight * 0.10,
-                    width: screenWidth * 0.85,
-                    child: TextFormField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        label: const Text("Password"),
-                        prefixIcon: const Icon(Icons.lock_person),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: const BorderSide(
-                            width: 2,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+            SizedBox(
+              width: double.maxFinite,
+              height: screenHeight * 0.3,
+              child: Column(
+                children: [
+                  TextFormController(email, emailIcon, _emailController),
+                  TextFormController(password, passwordIcon, _passwordController),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            width: double.maxFinite,
-            height: screenHeight * 0.4,
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: _signIn,
-                  child: Container(
-                    padding: const EdgeInsets.all(20),
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    decoration: BoxDecoration(
-                      color: Colors.orange.shade300,
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: screenHeight * 0.015,
-                ),
-                const Center(
-                  child: Text("Or"),
-                ),
-                SizedBox(
-                  height: screenHeight * 0.015,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
+            SizedBox(
+              width: double.maxFinite,
+              height: screenHeight * 0.4,
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: _signIn,
+                    child: Container(
                       padding: const EdgeInsets.all(20),
-                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.orange.shade300,
                         borderRadius: BorderRadius.circular(25),
                       ),
+                      child: const Center(
+                        child: Text(
+                          "Sign in",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.015,
+                  ),
+                  const Center(
+                    child: Text("Or"),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.015,
+                  ),
+                  GoogleFacebook(),
+                  SizedBox(
+                    height: screenHeight * 0.01,
+                  ),
+                  SizedBox(
+                    width: double.maxFinite,
+                    height: screenHeight * 0.05,
+                    child: Center(
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(
-                            Icons.g_mobiledata,
-                            color: Colors.orange,
+                          const Text(
+                            "Don't have an account? ",
                           ),
-                          SizedBox(
-                            width: screenWidth * 0.01,
-                          ),
-                          Center(
-                            child: Text(
-                              "Google",
-                              style: TextStyle(
-                                color: Colors.grey.shade800,
-                              ),
+                          InkWell(
+                            child: const Text(
+                              "Sign up",
+                              style: TextStyle(color: Colors.blue),
                             ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RegisterPage(),),);
+                            },
                           ),
                         ],
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      margin: const EdgeInsets.symmetric(horizontal: 15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.facebook,
-                            color: Colors.blue,
-                          ),
-                          SizedBox(
-                            width: screenWidth * 0.01,
-                          ),
-                          Center(
-                            child: Text(
-                              "Facebook",
-                              style: TextStyle(
-                                color: Colors.grey.shade800,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: screenHeight * 0.01,
-                ),
-                SizedBox(
-                  width: double.maxFinite,
-                  height: screenHeight * 0.05,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Don't have an account? ",
-                        ),
-                        InkWell(
-                          child: const Text(
-                            "Sign up",
-                            style: TextStyle(color: Colors.blue),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const RegisterPage()));
-                          },
-                        ),
-                      ],
-                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

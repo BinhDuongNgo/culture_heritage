@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:travel_application/modals/booking_card_modal.dart';
 import 'package:travel_application/modals/featured_listed_modal.dart';
 import 'package:travel_application/pages/booking_card/booking_card_1.dart';
-import 'package:travel_application/pages/booking_card/booking_card_2.dart';
 
 class BookMarked extends StatelessWidget {
   const BookMarked({super.key});
@@ -27,12 +27,7 @@ class BookMarked extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
-                  if(index == 0){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => BookingCard1()));
-                  }
-                  if(index == 1){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => BookingCard2()));
-                  }
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => BookingCard1(bookingCardModal: bookingCard[index],)));
                 },
                 child: Padding(
                   padding: EdgeInsets.all(5.0),

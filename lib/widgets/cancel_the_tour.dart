@@ -92,7 +92,7 @@ class _CancelTheTour extends State<CancelTheTour> {
                               Icons.favorite,
                               color: Colors.red,
                               size: 30,
-                            ),
+                            ), 
                             Text(
                               "3K",
                               style: TextStyle(

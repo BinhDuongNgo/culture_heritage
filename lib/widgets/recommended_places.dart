@@ -3,10 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_application/modals/recommended_places_modal.dart';
 import 'package:travel_application/pages/recommended_travel/recommended_travel_card_1.dart';
-import 'package:travel_application/pages/recommended_travel/recommended_travel_card_2.dart';
-import 'package:travel_application/pages/recommended_travel/recommended_travel_card_3.dart';
-import 'package:travel_application/pages/recommended_travel/recommended_travel_card_4.dart';
-import 'package:travel_application/pages/recommended_travel/recommended_travel_card_5.dart';
 
 class RecommendedPlaces extends StatelessWidget {
   const RecommendedPlaces({super.key});
@@ -32,36 +28,7 @@ class RecommendedPlaces extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(10),
                 onTap: () {
-                  if (index == 0) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecommendTravelCard1()));
-                  }
-                  if (index == 1) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecommendTravelCard2()));
-                  }
-                  if (index == 2) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecommendTravelCard3()));
-                  }
-                  if (index == 3) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecommendTravelCard4()));
-                  }
-                  if (index == 4) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecommendTravelCard5()));
-                  }
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendTravelCard1(placeModal: recommendedPlaces[index])));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(10),

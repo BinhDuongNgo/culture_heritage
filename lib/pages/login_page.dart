@@ -56,7 +56,8 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   TextFormController(email, emailIcon, _emailController),
-                  TextFormController(password, passwordIcon, _passwordController),
+                  TextFormController(
+                      password, passwordIcon, _passwordController),
                 ],
               ),
             ),
@@ -115,10 +116,11 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             onTap: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegisterPage(),),);
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const RegisterPage(),
+                                ),
+                              );
                             },
                           ),
                         ],

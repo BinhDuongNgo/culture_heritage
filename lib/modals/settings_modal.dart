@@ -14,8 +14,8 @@ class settingModal {
 
 List<settingModal> settings = [
   settingModal(
-    icon: Icons.translate,
-    name: "Language",
+    icon: Icons.settings,
+    name: "Settings",
     route: "/",
   ),
   settingModal(
@@ -24,8 +24,18 @@ List<settingModal> settings = [
     route: "/",
   ),
   settingModal(
+    icon: Icons.translate,
+    name: "Language",
+    route: "/",
+  ),
+  settingModal(
     icon: Icons.help,
     name: "Help center",
+    route: "/",
+  ),
+  settingModal(
+    icon: Icons.logout,
+    name: "Logout",
     route: "/",
   ),
 ];
